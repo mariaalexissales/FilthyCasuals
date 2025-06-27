@@ -1,4 +1,4 @@
-Config = require("SoulForgedConfig")
+Config = require("SoulForgeMenu/SoulForgedConfig")
 QualityTickets = {}
 
 function QualityTickets.parseTicketName(fullItemString)

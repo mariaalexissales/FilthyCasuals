@@ -8,6 +8,12 @@ TooltipUtils.AugmentColors = {
     [4] = "<RGB:0.83,0.68,0.21>"
 }
 
+TooltipUtils.ActionColors = {
+    Repair = "<RGB:0.3,0.9,0.3>",
+    Condition = "<RGB:0.3,0.6,1>",
+    Forge = "<RGB:0.83,0.68,0.21>"
+}
+
 TooltipUtils.DisplayNames = {
     MaxDmg = "Max Dmg",
     MinDmg = "Min Dmg",
@@ -29,4 +35,14 @@ end
 
 function TooltipUtils.getDisplayName(statName)
     return TooltipUtils.DisplayNames[statName] or statName
+end
+
+function TooltipUtils.getActionColor(actionType)
+    return TooltipUtils.ActionColors[actionType] or "<RGB:1,1,1>"
+end
+
+function TooltipUtils.attachSimpleTooltip(option, label, description, color)
+    local tooltip = ISWorldObjectContextMenu.addToolTip()
+    tooltip.description = (color or "") .. "**" .. label .. "**" .. " <LINE> " .. description
+    option.toolTip = tooltip
 end

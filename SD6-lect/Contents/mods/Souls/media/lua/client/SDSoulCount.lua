@@ -823,6 +823,12 @@ local function SoulContextSD(player, context, items) -- # When an inventory item
             numAugments = weaponModData.Augments or 0
             soulWrought = weaponModData.SoulWrought or nil
             baseMaxCond = "10"
+
+            print("[Lect's Version]")
+            print("Weapon Max Condition: " .. weaponMaxCond)
+            print("Weapon Condition Lower Chance: " .. weaponCondLowerChance)
+            print("Weapon Minimum Damage: " .. o_scriptItem:getMinDamage())
+            print("Souls Required: " .. soulsRequired)
             if soulWrought then baseMaxCond = "50" end
 
             local function itemStats()
